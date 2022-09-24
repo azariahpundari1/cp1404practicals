@@ -1,19 +1,30 @@
 """
-CP1404/CP5632 - Practical 1
+CP1404/CP5632 - Practical 2
 Broken program to determine score status
 """
+import random
 
-score = float(input("Enter score: "))
-if score > 100 or score < 0:
-    print("Invalid score")
-elif score >= 90:
-    print("Excellent")
-elif score >= 50:
-    print("Passable")
-else:
-    print("Bad")
 
-# could we also use
-# 'elif score < 50:
-#       print("Bad")
-# or is this bad practice?
+def main():
+    """Initiate program"""
+    score = float(input("Enter score: "))
+    print(get_result(score))
+    random_number = random.randint(0, 100)
+    # print(f"Random score: {random_number}")
+    get_result(random_number)
+    print(get_result(random_number))
+
+
+def get_result(score):
+    """Determines results"""
+    if score > 100 or score < 0:
+        return "Invalid score"
+    elif score >= 90:
+        return "Excellent"
+    elif score >= 50:
+        return "Passable"
+    else:
+        return "Bad"
+
+
+main()
