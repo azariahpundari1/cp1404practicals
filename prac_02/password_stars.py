@@ -6,11 +6,12 @@ A program that shows password in star format
 
 # imports
 # CONSTANTS
+MIN_LENGTH = 10
+
 
 def main():
     """Initiate program"""
     password = input("Password: ")
-    MIN_LENGTH = 10
     password = valid_password(MIN_LENGTH, password)
     count_stars(password)
 
