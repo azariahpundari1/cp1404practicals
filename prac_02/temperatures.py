@@ -1,13 +1,14 @@
 """
 CP1404/CP5632 - Practical 2
 A program that converts Celsius to Fahrenheit and vise versa.
-Pseudocode for temperature conversion
-
 """
+
+# imports
+# Constants
+MENU = """C - Convert Celsius to Fahrenheit\nF - Convert Fahrenheit to Celsius\nQ - Quit"""
 
 
 def main():
-    MENU = """C - Convert Celsius to Fahrenheit\nF - Convert Fahrenheit to Celsius\nQ - Quit"""
     print(MENU)
     choice = input(">>> ").upper()
     while choice != "Q":
