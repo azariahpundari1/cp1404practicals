@@ -22,9 +22,10 @@ def count_stars(password):
         print('*', end='')
 
 
-def valid_password(MIN_LENGTH, password):
+def valid_password(min_length, password):
     """Determines validity of password"""
-    while len(password) < MIN_LENGTH:
+    # used different argument name to avoid errors?
+    while len(password) < min_length:
         print("Weak password")
         password = input("Password: ")
     return password
