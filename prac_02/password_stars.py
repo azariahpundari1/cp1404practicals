@@ -17,13 +17,13 @@ def main():
 
 
 def count_stars(password):
-    """Counts the number of stars"""
+    """Count the number of stars"""
     for i in range(len(password)):
         print('*', end='')
 
 
 def valid_password(min_length, password):
-    """Determines validity of password"""
+    """Determine validity of password"""
     # used different argument name to avoid errors?
     while len(password) < min_length:
         print("Weak password")
