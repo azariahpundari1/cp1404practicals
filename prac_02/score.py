@@ -1,6 +1,6 @@
 """
 CP1404/CP5632 - Practical 2
-Broken program to determine score status
+A program that determines the result from a given score
 """
 import random
 
