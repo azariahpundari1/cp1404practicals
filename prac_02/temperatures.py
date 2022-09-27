@@ -9,6 +9,7 @@ MENU = """C - Convert Celsius to Fahrenheit\nF - Convert Fahrenheit to Celsius\n
 
 
 def main():
+    """Initiate program"""
     print(MENU)
     choice = input(">>> ").upper()
     while choice != "Q":
