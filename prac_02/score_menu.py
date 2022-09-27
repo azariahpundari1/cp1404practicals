@@ -15,10 +15,10 @@ def main():
     option = input(">>> ").upper()
     while option != 'Q':
         if option == 'D':
-            score = get_score()
+            score = get_valid_score()
             print(get_result(score))
         elif option == 'S':
-            score = get_score()
+            score = get_valid_score()
             print('*' * score)
         else:
             print("Invalid choice")
@@ -27,8 +27,9 @@ def main():
     print("Finished.")
 
 
-def get_score():
-    """Gets and checks user scores"""
+def get_valid_score():
+    """Determine if user score is valid"""
+    # asked here as im repeating myself
     score = int(input("Score: "))
     # Error loop
     while score > 100 or score < 0:
@@ -38,7 +39,7 @@ def get_score():
 
 
 def get_result(score):
-    """Determines results"""
+    """Determine results from score"""
     if score > 100 or score < 0:
         return "Invalid score"
     elif score >= 90:
