@@ -1,4 +1,7 @@
-"""Module docstring"""
+"""
+CP1404/CP5632 - Practical 2
+A program that shows password in star format
+"""
 
 
 # imports
