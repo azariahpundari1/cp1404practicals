@@ -12,3 +12,8 @@ out_file = open(FILE_NAME, 'w')
 print(name, file=out_file)
 out_file.close()
 
+# 2. A code that opens 'name.txt' and reads the name and prints the name
+in_file = open(FILE_NAME, 'r')
+read_name = in_file.readline()
+print(f"Your name is {read_name}")
+
