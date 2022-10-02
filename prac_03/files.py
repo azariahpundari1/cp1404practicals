@@ -20,7 +20,6 @@ in_file.close()
 
 # 3. Number stuff
 # for the sake of the code, made the variable a different name instead of "in_file"
-total = 0
 lines = []
 file_object = open("numbers.txt", 'r')
 for line in file_object:
