@@ -25,5 +25,17 @@ lines = []
 file_object = open("numbers.txt", 'r')
 for line in file_object:
     lines.append(line.strip())
-print(int(lines[1]) + int(lines[0]))
+total = int(lines[1]) + int(lines[0])
+print(total)
+file_object.close()
+
+# 4. Total for numbers.txt
+# copy-pasted code from '.3'
+total = 0
+lines = []
+file_object = open("numbers.txt", 'r')
+for line in file_object:
+    lines.append(line.strip())
+    total += int(line)
+print(total)
 file_object.close()
