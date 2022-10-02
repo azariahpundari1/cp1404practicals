@@ -17,3 +17,11 @@ except ZeroDivisionError:
     print("Cannot divide by zero!")
 print("Finished.")
 
+# 1. When will ValueError occur?
+# When the user inputs an invalid value - a string instead of an int
+
+# 2. When will a ZeroDivisionError occur?
+# When the user inputs a 0 in the denominator
+
+# 3. Could you change the code to avoid the possibility of a zero division?
+# Yes, use a while loop to check for invalid numbers.
