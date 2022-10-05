@@ -13,6 +13,7 @@ def main():
 
 
 def print_subject_details(data):
+    """Display subject detail like: subject code, lecturer, number of students """
     for i in data:
         subject = i[0]
         lecturer = i[1]
