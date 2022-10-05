@@ -7,8 +7,15 @@ numbers = []
 
 for i in range(1, 5+1):
     # print(i)
-    number = int(input("Number: "))
-    numbers.append(number)
+    try:
+        number = int(input("Number: "))
+        numbers.append(number)
+    except ValueError:
+        print("Not a number")
+    # hmm, interesting how it keeps going for the set amount of times
+    # how is a try different from a while error check? can i make it ask for a number but not iterate through the
+    # for loop?
+
 
 
 # First number
