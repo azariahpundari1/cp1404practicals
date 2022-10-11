@@ -40,7 +40,6 @@ print(numbers)
 numbers = [number for number in numbers if number > 9]
 print(numbers)
 
-
 # to create a string (not list) of the last names for those full names longer than 11 characters
 # the result should be: 'Harlem, Hendrix, Lovelace'
 # this is to see what to put in list comprehension
@@ -49,5 +48,6 @@ print(numbers)
 #     if len(fullname) > 11:
 #         print("".join(parts[1]))
 
+# full names longer than 11 characters
 full_name = [fullname.split(' ')[1] for fullname in full_names if len(fullname) > 11]
 print(", ".join(full_name))
