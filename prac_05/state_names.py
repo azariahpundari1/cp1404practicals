@@ -7,14 +7,15 @@ File needs reformatting
 CODE_TO_NAME = {"QLD": "Queensland", "NSW": "New South Wales", "NT": "Northern Territory", "WA": "Western Australia",
                 "ACT": "Australian Capital Territory", "VIC": "Victoria", "TAS": "Tasmania"}
 print(CODE_TO_NAME)
+run = True
 
-state_code = input("Enter short state: ").upper()
-while state_code != "":
-    if state_code in CODE_TO_NAME:
+while run:
+    try:
+        state_code = input("Enter short state: ").upper()
         print(state_code, "is", CODE_TO_NAME[state_code])
-    else:
+        run = False
+    except KeyError:
         print("Invalid short state")
-    state_code = input("Enter short state: ")
 
 # displays every state code and state name
 for state_code in CODE_TO_NAME.items():
