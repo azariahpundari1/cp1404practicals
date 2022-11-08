@@ -17,10 +17,7 @@ def main():
         parts = line.strip().split(',')
         # print(parts)
         # print(parts[0])  # test
-        name = parts[0]
-        year = parts[1]
-        price = parts[2]
-        guitar = Guitar(name, year, price)
+        guitar = identify_guitar_parts(parts)
         guitars.append(guitar)
     in_file.close()
 
@@ -28,6 +25,15 @@ def main():
     guitars.sort()
     for guitar in guitars:
         print(guitar)
+
+
+def identify_guitar_parts(parts):
+    """Identify guitar parts into variables, creates guitar object using class"""
+    name = parts[0]
+    year = parts[1]
+    price = parts[2]
+    guitar = Guitar(name, year, price)
+    return guitar
 
 
 main()
