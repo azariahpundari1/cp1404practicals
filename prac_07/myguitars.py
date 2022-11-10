@@ -75,6 +75,7 @@ def load_csv_data():
         parts[2] = float(parts[2])
         guitars_csv.append(parts)
     in_file.close()
+    # kind of repeating but it serves a different purpose
     return guitars_csv
 
 
