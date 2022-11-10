@@ -9,8 +9,6 @@ Actual: ...
 # Imports
 from prac_07.project_management import ProjectManagement
 import datetime
-
-print(date.strftime("%d/%m/%Y"))
 # Constants
 MENU = '(L)oad projects\n(S)ave projects\n(D)isplay projects\n(F)ilter projects (date)\n(A)dd project\n(U)pdate ' \
        'project\n(Q)uit'
@@ -37,17 +35,38 @@ def main():
                 else:
                     complete_projects.append(project)
             print("Incomplete projects:")
+
             for project in incomplete_projects:
                 print(ProjectManagement(project[0], project[1], project[2], project[3], project[4]))
             print("Completed projects:")
             for project in complete_projects:
                 print(ProjectManagement(project[0], project[1], project[2], project[3], project[4]))
         elif option == 'F':
-            date = input("Date (dd/mm/YYYY): ")
+            date_string = input("Date (dd/mm/yyyy): ")  # e.g., "30/9/2022"
+            date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+            # skipping this one cause i dont get it
+            # print(f"That day is/was {date.strftime('%A')}")
+            # print(date.strftime("%d/%m/%Y"))
         elif option == 'A':
-            pass
+            new_project = []
+            print("Lets add a new project")
+            name_of_project = input("Project name: ")
+            new_project.append(name_of_project)
+            date_started = input("Date (dd/mm/yyyy): ")
+            new_project.append(date_started)
+            priority = int(input("Priority: "))
+            new_project.append(priority)
+            estimate_cost = float(input("Estimate cost: "))
+            new_project.append(estimate_cost)
+            completion = float(input("Percent complete: "))
+            new_project.append(completion)
+            projects.append(new_project)
         elif option == 'U':
-            pass
+            for i, project in enumerate(projects):
+                print(f"{i+1} {ProjectManagement(project[0], project[1], project[2], project[3], project[4])}")
+            choice = int(input("Project choice: "))
+            project_choice = ProjectManagement(choice)  # idk what to do here :/
+            print(project_choice)
         else:
             print("Invalid input")
         print(MENU)
