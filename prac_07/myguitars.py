@@ -31,7 +31,7 @@ def main():
             guitars_csv.append(new_guitars)
         else:
             run = False
-    display_guitars(guitars)
+    display_guitars(guitars)  # to show new guitars if user has inputted new guitars
     save_file(guitars_csv)
 
 
