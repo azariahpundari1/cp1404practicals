@@ -16,8 +16,7 @@ def main():
     load_file(guitars)
     # Sort guitars from oldest - newest
     guitars.sort()
-    for guitar in guitars:
-        print(guitar)
+    display_guitars(guitars)
     print(f"You have {len(guitars)} guitars in your collection")
 
     # going to make this similar to assessment01 because without a menu, its confusing
@@ -25,8 +24,7 @@ def main():
     option = input(">>> ").upper()
     while option != 'Q':
         if option == 'D':
-            for guitar in guitars:
-                print(guitar)
+            display_guitars(guitars)
         elif option == 'A':
             name = input("Name: ").title()
             year = int(input("Year: "))
@@ -38,7 +36,12 @@ def main():
             print(MENU)
         option = input(">>> ").upper()
     print("Fin")
-    save_guitar(file_name, guitars)
+    save_file(file_name, guitars)
+
+
+def display_guitars(guitars):
+    for guitar in guitars:
+        print(guitar)
 
 
 def load_file(guitars):
@@ -69,7 +72,7 @@ def identify_guitar_parts(parts):
     return guitar
 
 
-def save_guitar(file_name, guitars):
+def save_file(file_name, guitars):
     out_file = open(file_name, 'w')
     for i, guitar in enumerate(guitars):
         str_guitar = [str(guitar) for guitar in guitar]
