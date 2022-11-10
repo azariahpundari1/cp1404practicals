@@ -2,7 +2,7 @@
 CP1404 Programming II - Prac 07
 My guitars
 Estimate: 30 min
-Actual: literally 2 days, i lost count glad i got it done tho and it works
+Actual: literally 2 days, i lost count glad i got it done and it works
 """
 
 from prac_06.guitar import Guitar
