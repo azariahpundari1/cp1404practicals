@@ -1,6 +1,8 @@
 """
 CP1404 Programming II - Prac 07
 My guitars
+Estimate: 30 min
+Actual: literally 2 days, i lost count glad i got it done tho and it works
 """
 
 from prac_06.guitar import Guitar
@@ -12,11 +14,8 @@ def main():
     """A program that displays a collection of guitars using a class"""
     guitars = load_file()
     # display guitar
-    guitars.sort()
     # print(type(guitars[0][1]))  # test
-    for guitar in guitars:
-        guitar_object = Guitar(guitar[0], guitar[1], guitar[2])
-        print(guitar_object)
+    display_guitars(guitars)
     run = True
     while run:
         new_guitars = []
@@ -27,17 +26,24 @@ def main():
             new_guitars.append(year)
             price = float(input("Price: "))
             new_guitars.append(price)
-            print(new_guitars)
-            guitars.append(new_guitars)
+            guitars.append(Guitar(new_guitars[0], new_guitars[1], new_guitars[2]))
         else:
             run = False
-    save_file(FILENAME, guitars)
+    display_guitars(guitars)
+    save_file(FILENAME, load_csv_data())
 
 
-def save_file(FILENAME, guitars):
+def display_guitars(guitars):
+    """Display guitar, sort from oldest to newest"""
+    guitars.sort()
+    for guitar in guitars:
+        print(guitar)
+
+
+def save_file(FILENAME, csv_data):
     """Save file containing any new guitar inputted by user"""
     out_file = open(FILENAME, 'w')
-    for i, guitar in enumerate(guitars):
+    for i, guitar in enumerate(csv_data):
         str_guitar = [str(guitar) for guitar in guitar]
         print(",".join(str_guitar), file=out_file)
     out_file.close()
@@ -53,9 +59,21 @@ def load_file():
         # print(parts)  # test
         parts[1] = int(parts[1])
         parts[2] = float(parts[2])
-        guitars.append(parts)
+        guitars.append(Guitar(parts[0], parts[1], parts[2]))  # this took me so long to figure out
     in_file.close()
     return guitars
+
+
+def load_csv_data():
+    guitars_csv = []  # to save onto csv file
+    in_file = open(FILENAME, 'r')
+    for line in in_file:
+        parts = line.strip().split(',')
+        parts[1] = int(parts[1])
+        parts[2] = float(parts[2])
+        guitars_csv.append(parts)
+    in_file.close()
+    return guitars_csv
 
 
 main()
