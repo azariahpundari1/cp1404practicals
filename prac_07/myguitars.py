@@ -13,6 +13,7 @@ FILENAME = 'guitars.csv'
 def main():
     """A program that displays a collection of guitars using a class"""
     guitars = load_file()
+    guitars_csv = load_csv_data()
     # display guitar
     # print(type(guitars[0][1]))  # test
     display_guitars(guitars)
@@ -27,10 +28,11 @@ def main():
             price = float(input("Price: "))
             new_guitars.append(price)
             guitars.append(Guitar(new_guitars[0], new_guitars[1], new_guitars[2]))
+            guitars_csv.append(new_guitars)
         else:
             run = False
     display_guitars(guitars)
-    save_file(FILENAME, load_csv_data())
+    save_file(guitars_csv)
 
 
 def display_guitars(guitars):
@@ -40,7 +42,7 @@ def display_guitars(guitars):
         print(guitar)
 
 
-def save_file(FILENAME, csv_data):
+def save_file(csv_data):
     """Save file containing any new guitar inputted by user"""
     out_file = open(FILENAME, 'w')
     for i, guitar in enumerate(csv_data):
