@@ -24,12 +24,13 @@ class ConvertMileKm(App):
         self.root = Builder.load_file('convert_miles_km.kv')
         self.input_message = "34"
         self.output_message = "5.717"
+        # used this because it said to use mvc_demo
         return self.root
 
     def handle_calculate(self):
         """Calculate result using value set by user"""
         value = self.get_valid_number()
-        result = float(value) * KM_CONVERSION
+        result = value * KM_CONVERSION
         self.root.ids.output_label.text = str(result)
 
     def handle_increment(self, increment):
@@ -41,9 +42,11 @@ class ConvertMileKm(App):
         """Get a valid number from user"""
         try:
             value = self.root.ids.user_input.text
-            return int(value)
+            return float(value)
         except ValueError:
-            pass
+            return 0
 
+
+# i keep getting mixed up with the self.something.something so had to look at solutions a bit
 
 ConvertMileKm().run()
