@@ -19,5 +19,6 @@ class ProjectManagement:
 
     def __str__(self):
         """Return string showing project details"""
-        return f"{self.name}, start: {self.date}, priority: {self.priority}, estimate, completion: {self.completion}"
+        return f"{self.name}, start: {self.date}, priority: {self.priority}, estimate {self.cost}, completion: " \
+               f"{self.completion}"
 
