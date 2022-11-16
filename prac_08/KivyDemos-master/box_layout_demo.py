@@ -16,7 +16,8 @@ class BoxLayoutDemo(App):
 
     def handle_clear(self):
         """Reset output label to default - Enter name"""
-        self.root.ids.output_label.text = "Enter name"
+        self.root.ids.output_label.text = "Enter name"  # reset to default
+        self.root.ids.input_name.text = ""  # reset name to empty field
 
 
 BoxLayoutDemo().run()
