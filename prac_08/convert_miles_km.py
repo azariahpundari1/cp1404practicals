@@ -7,32 +7,41 @@ By Azariah Pundari
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.core.window import Window
+from kivy.properties import StringProperty
 
 
 class ConvertMileKm(App):
     """Convert mile to kilometer app start"""
+    input_message = StringProperty()
+    output_message = StringProperty()
 
     def build(self):
         """ Build miles to kilometers widget window"""
         Window.size = (350, 200)
         self.title = "Convert Miles to Kilometers"
         self.root = Builder.load_file('convert_miles_km.kv')
+        self.input_message = "34"
+        self.output_message = "5.717"
         return self.root
 
-    def handle_calculate(self, value):
+    def handle_calculate(self):
+        """Calculate result using value set by user"""
+        value = self.get_valid_number()
+        result = float(value) * 1.60934
+        self.root.ids.output_label.text = str(result)
+
+    def handle_increment(self, increment):
+        """Increase or decrease input value by 1"""
+        value = self.get_valid_number() + increment
+        self.root.ids.user_input.text = str(value)
+
+    def get_valid_number(self):
+        """Get a valid number from user"""
         try:
-            result = float(value) * 1.60934
-            self.root.ids.output_label.text = f"{str(result)} km"
+            value = self.root.ids.user_input.text
+            return int(value)
         except ValueError:
             pass
-
-    def handle_up_increment(self):
-        # TODO do code for this
-        pass
-
-    def handle_down_increment(self):
-        # TODO do code for this
-        pass
 
 
 ConvertMileKm().run()

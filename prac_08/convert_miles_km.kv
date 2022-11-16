@@ -2,15 +2,21 @@ BoxLayout:
     orientation: 'vertical'
     BoxLayout:
         orientation: 'horizontal'
-        Label:
-            text: 'Test'
+        TextInput:
+            text: app.input_message
+            id: user_input
         BoxLayout:
             orientation: 'vertical'
             Button:
-                text: 'Button 1'  # + increment (up)
+                id: increment
+                text: 'up'
+                on_press:  app.handle_increment(1) # + increment (up)
             Button:
-                text: 'Button 2'  # - increment (down)
+                text: 'down'  # - increment (down)
+                on_press: app.handle_increment(-1)
     Button:
-        text: 'Convert m to km'
+        text: 'Convert miles to km'
+        on_press: app.handle_calculate()
     Label:
-        text: '54.17'
+        id: output_label
+        text: app.output_message
