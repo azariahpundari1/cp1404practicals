@@ -5,10 +5,10 @@ Estimate: 1hr, start - 7:36pm thursday 10th nov
 Actual: ...
 """
 
-
 # Imports
 from prac_07.project_management import ProjectManagement
 import datetime
+
 # Constants
 MENU = '(L)oad projects\n(S)ave projects\n(D)isplay projects\n(F)ilter projects (date)\n(A)dd project\n(U)pdate ' \
        'project\n(Q)uit'
@@ -63,7 +63,7 @@ def main():
             projects.append(new_project)
         elif option == 'U':
             for i, project in enumerate(projects):
-                print(f"{i+1} {ProjectManagement(project[0], project[1], project[2], project[3], project[4])}")
+                print(f"{i + 1} {ProjectManagement(project[0], project[1], project[2], project[3], project[4])}")
             choice = int(input("Project choice: "))
             project_choice = ProjectManagement(choice)  # idk what to do here :/
             print(project_choice)
@@ -85,5 +85,7 @@ def load_project(projects):
         projects.append(parts)
     in_file.close()
 
+
+# add this to make changes for merging
 
 main()
