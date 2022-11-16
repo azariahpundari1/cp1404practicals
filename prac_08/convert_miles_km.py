@@ -20,6 +20,4 @@ class ConvertMileKm(App):
         return self.root
 
 
-
-
 ConvertMileKm().run()
