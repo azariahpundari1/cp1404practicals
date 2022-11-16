@@ -19,5 +19,20 @@ class ConvertMileKm(App):
         self.root = Builder.load_file('convert_miles_km.kv')
         return self.root
 
+    def handle_calculate(self, value):
+        try:
+            result = float(value) * 1.60934
+            self.root.ids.output_label.text = f"{str(result)} km"
+        except ValueError:
+            pass
+
+    def handle_up_increment(self):
+        # TODO do code for this
+        pass
+
+    def handle_down_increment(self):
+        # TODO do code for this
+        pass
+
 
 ConvertMileKm().run()
