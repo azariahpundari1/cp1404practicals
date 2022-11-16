@@ -15,9 +15,11 @@ class ConvertMileKm(App):
     def build(self):
         """ build the Kivy app from the kv file """
         Window.size = (350, 200)
-        self.title = "Square Number 2"
+        self.title = "Convert Miles to Kilometers"
         self.root = Builder.load_file('convert_miles_km.kv')
         return self.root
+
+
 
 
 ConvertMileKm().run()
