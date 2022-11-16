@@ -7,13 +7,16 @@ BoxLayout:
             text: '7'
             font_size: 48
             multiline: False
+            size_hint_x: 0.3
         Button:
             text: 'Square'
             # the following line specifies the function in the app class to call when the button is pressed
             on_press: app.handle_calculate(input_number.text)
+            size_hint_x: 0.3
         Label:
             id: output_label
             font_size: 48
             color: (0, 1, 1, 1)
+            size_hint_x: 0.3
     Label:
-        text: 'Enter a number and press "square"'
+        text: 'Enter a number and press "Square"'
