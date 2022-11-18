@@ -22,11 +22,9 @@ class UnreliableCar(Car):
 
     def drive(self, distance):
         """Drive car a certain distance"""
-        for number in range(random.randint(0, 100)):
-            pass
-        if self.reliability > number:
+        if self.reliability > random.randint(0, 100):
             distance = self.fuel
         else:
             self.fuel -= distance
-            self.distance += distance
+        self.distance += distance
         return distance
