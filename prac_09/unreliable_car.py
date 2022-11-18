@@ -18,13 +18,15 @@ class UnreliableCar(Car):
 
     def __str__(self):
         """Return a string representation of an UnreliableCar object."""
-        return f"{self.name}, fuel={self.fuel}, distance travelled={self.distance}"
+        return f"{self.name}, fuel={self.fuel}, distance travelled={self.distance}km"
 
     def drive(self, distance):
         """Drive car a certain distance"""
         if self.reliability > random.randint(0, 100):
-            distance = self.fuel
-        else:
-            self.fuel -= distance
-        self.distance += distance
+            if distance > self.fuel:
+                distance = self.fuel
+                self.fuel = 0
+            else:
+                self.fuel -= distance
+            self.distance += distance
         return distance
