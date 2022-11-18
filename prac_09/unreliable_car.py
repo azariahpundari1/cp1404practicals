@@ -14,11 +14,11 @@ class UnreliableCar(Car):
         """Initialise a unreliable car instance"""
         super().__init__(name, fuel)
         self.reliability = reliability
-        self.distance_travelled = 0
+        self.distance = 0
 
     def __str__(self):
         """Return a string representation of an UnreliableCar object."""
-        return f"{self.name}, fuel={self.fuel}, distance travelled={self.distance_travelled}"
+        return f"{self.name}, fuel={self.fuel}, distance travelled={self.distance}"
 
     def drive(self, distance):
         """Drive car a certain distance"""
@@ -28,5 +28,5 @@ class UnreliableCar(Car):
             distance = self.fuel
         else:
             self.fuel -= distance
-            self.distance_travelled += distance
+            self.distance += distance
         return distance
