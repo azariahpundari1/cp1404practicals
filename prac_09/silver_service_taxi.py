@@ -18,8 +18,9 @@ class SilverServiceTaxi(Taxi):
 
     def __str__(self):
         """Return a string displaying name, fuel, odo, distance, price per km, flagfall"""
-        return f"{self.name}, fuel={self.fuel}, odo={self.odometer}, {self.current_fare_distance}, {self.price_per_km} " \
-               f"plus flagfall {self.flagfall}"
+        return f"{self.name}, fuel={self.fuel}, odo={self.odometer}, {self.current_fare_distance}, " \
+               f"${self.price_per_km * self.flagfall}/km plus flagfall of {self.flagfall}"
 
     def get_fare(self):
         """Return price for silver service trip"""
+        return (self.price_per_km * self.flagfall) * self.current_fare_distance
