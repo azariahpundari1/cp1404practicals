@@ -8,7 +8,7 @@ from prac_09.taxi import Taxi
 
 def main():
     """Test to see if taxi.py works"""
-    my_taxi = Taxi("Prius", 100, 1.23)
+    my_taxi = Taxi("Prius", 100)
     # print(my_taxi)
     # drive taxi 40km
     my_taxi.drive(40)
