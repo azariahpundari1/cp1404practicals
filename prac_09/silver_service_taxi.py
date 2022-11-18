@@ -27,6 +27,7 @@ class SilverServiceTaxi(Taxi):
 
 
 if __name__ == '__main__':
+    # tests
     test = SilverServiceTaxi("Hammer", 200, 4)
     print(test)
     test.drive(20)
