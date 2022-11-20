@@ -5,9 +5,9 @@ Silver Service Taxi tests
 
 from prac_09.silver_service_taxi import SilverServiceTaxi
 
-test = SilverServiceTaxi("Hammer", 200, 4)
+test = SilverServiceTaxi("Hammer", 200, 2)
 print(test)
-test.drive(20)
+test.drive(18)
 print(test)
 test.start_fare()
 print(test)
