@@ -19,8 +19,8 @@ class SilverServiceTaxi(Taxi):
     def __str__(self):
         """Return a string displaying name, fuel, odo, distance, price per km, flagfall"""
         return f"{super(SilverServiceTaxi, self).__str__()} plus flagfall ${self.flagfall}, " \
-               f"Trip fare: {self.get_fare()}"
+               f"Trip fare: ${self.get_fare()}"
 
     def get_fare(self):
         """Return price for the taxi trip plus flagfall"""
-        return super(SilverServiceTaxi, self).get_fare() + self.flagfall
+        return float(super(SilverServiceTaxi, self).get_fare() + self.flagfall)
