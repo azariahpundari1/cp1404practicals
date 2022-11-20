@@ -19,17 +19,3 @@ class SilverServiceTaxi(Taxi):
     def __str__(self):
         """Return a string displaying name, fuel, odo, distance, price per km, flagfall"""
         return f"{super(SilverServiceTaxi, self).__str__()} plus flagfall ${self.flagfall}"
-
-
-if __name__ == '__main__':
-    # tests
-    test = SilverServiceTaxi("Hammer", 200, 4)
-    print(test)
-    test.drive(20)
-    print(test)
-    test.start_fare()
-    print(test)
-    test.drive(100)
-    print(test)
-    test.start_fare()
-    print(test)
