@@ -4,8 +4,8 @@
 class Band:
     """Band class"""
 
-    def __init__(self, name=""):
-        self.name = name
+    def __init__(self, band_name=""):
+        self.band_name = band_name
 
     def __str__(self):
         return f"print"
