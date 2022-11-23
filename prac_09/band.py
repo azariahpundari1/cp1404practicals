@@ -5,7 +5,9 @@ class Band:
     """Band class"""
 
     def __init__(self, band_name=""):
-        pass
+        """Construct a Band with a band name and empty musicians collection"""
+        self.bane_name = band_name
+        self.musicians = []
 
     def add(self, object):
         pass
