@@ -4,7 +4,7 @@
 class Band:
     """Band class"""
 
-    def __init__(self, band_name):
+    def __init__(self, band_name: str):
         """Construct a Band with a name and empty musician collection"""
         self.band_name = band_name
         self.musicians = []
@@ -13,9 +13,17 @@ class Band:
         """Return a string representation of a musician"""
         return f"{self.band_name} ({self.musicians})"
 
+    def __repr__(self):
+        """Return a string representation of a musician showing variables"""
+        return str(vars(self))
+
     def add(self, musician):
         """Add a musician to musicians collection"""
         self.musicians.append(musician)
+
+    def play(self):
+        """Return a string showing the musician playing their song or no instrument"""
+        pass
 
 
 if __name__ == '__main__':
