@@ -9,7 +9,7 @@ from prac_06.car import Car
 
 def repeat_string(s, n):
     """Repeat string s, n times, with spaces in between."""
-    return s * n
+    return " ".join([s] * n)
 
 
 def is_long_word(word, length=5):
@@ -32,8 +32,8 @@ def run_tests():
     # the test below should fail
     assert repeat_string("hi", 2) == "hi hi"
 
-    # TODO: 1. fix the repeat_string function above so that it passes the failing test
-    # Hint: "-".join(["yo", "yo"] -> "yo-yo"
+    # was testing this out using python console and i found it quite intriguing, why does it need a list? passing
+    # just a string would give 's' 't' 'r'
 
     # assert test with custom message,
     # used to see if Car's init method sets the odometer correctly
