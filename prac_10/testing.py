@@ -69,12 +69,12 @@ doctest.testmod()
 # then write the body of the function so that the tests pass
 
 def format_phrase_to_sentence(phrase):
-    """Format a given phrase to a sentence"""
-    sentence = phrase.capitalize()
-    if sentence[-1] != '.':
-        sentence += '.'
-    print(sentence)
-
+    """Format a given phrase to a sentence
+    >>> format_phrase_to_sentence('hello')
+    >>> format_phrase_to_sentence('It is an ex parrot.')
+    >>> format_phrase_to_sentence('sUpeRcolurs ar sUperb')
+    """
+    pass
 
 # tests
 format_phrase_to_sentence('hello')
