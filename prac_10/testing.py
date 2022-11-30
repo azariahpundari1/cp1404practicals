@@ -72,7 +72,6 @@ doctest.testmod()
 
 # (don't change the tests, change the function!)
 
-# TODO: 5. Write and test a function to format a phrase as a sentence,
 # starting with a capital and ending with a single full stop.
 # Important: start with a function header and just use pass as the body
 # then add doctests for 3 tests:
@@ -83,7 +82,7 @@ doctest.testmod()
 # then write the body of the function so that the tests pass
 
 
-# tests
+# tests for format_phrase_to_sentence
 # format_phrase_to_sentence(phrase='hello')
 # format_phrase_to_sentence('it is an ex parrot')  # should add full stop and capitalize
 # format_phrase_to_sentence('lOl, i Ate a Baloney')
