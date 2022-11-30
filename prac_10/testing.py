@@ -50,16 +50,21 @@ def run_tests():
     assert test_car.fuel != 0, "Car did not set fuel correctly"
 
 
-def format_phrase_to_sentence():
+def format_phrase_to_sentence(phrase):
     """Format a given phrase to a sentence
     >>> format_phrase_to_sentence('hello')
+    'Hello.'
     >>> format_phrase_to_sentence('It is an ex parrot.')
-    >>> format_phrase_to_sentence('sUpeRcolors ar sUperb')
+    'It is an ex parrot.'
+    >>> format_phrase_to_sentence('sUpeRcolors are sUperb')
+    'Supercolors are superb.'
     """
-    pass
+    sentence = phrase.capitalize()
+    if sentence[-1] != '.':
+        sentence += '.'
+    return sentence
 
 
-format_phrase_to_sentence()
 run_tests()
 
 # (PyCharm may see your >>> doctest comments and run doctests anyway.)
