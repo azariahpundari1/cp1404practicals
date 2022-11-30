@@ -68,9 +68,15 @@ doctest.testmod()
 # test this and watch the tests fail
 # then write the body of the function so that the tests pass
 
-def format_phrase_to_sentence():
+def format_phrase_to_sentence(phrase):
     """Format a given phrase to a sentence"""
-    pass
+    sentence = phrase.capitalize()
+    if sentence[-1] != '.':
+        sentence += '.'
+    print(sentence)
 
 
-format_phrase_to_sentence()
+# tests
+format_phrase_to_sentence('hello')
+format_phrase_to_sentence('it is an ex parrot')  # should add full stop and capitalize
+format_phrase_to_sentence('lOl, i Ate a Baloney')
