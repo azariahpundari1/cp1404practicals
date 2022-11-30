@@ -50,11 +50,20 @@ def run_tests():
     assert test_car.fuel != 0, "Car did not set fuel correctly"
 
 
+def format_phrase_to_sentence():
+    """Format a given phrase to a sentence
+    >>> format_phrase_to_sentence('hello')
+    >>> format_phrase_to_sentence('It is an ex parrot.')
+    >>> format_phrase_to_sentence('sUpeRcolors ar sUperb')
+    """
+    pass
+
+
+format_phrase_to_sentence()
 run_tests()
 
 # (PyCharm may see your >>> doctest comments and run doctests anyway.)
 doctest.testmod()
-
 
 # (don't change the tests, change the function!)
 
@@ -68,15 +77,8 @@ doctest.testmod()
 # test this and watch the tests fail
 # then write the body of the function so that the tests pass
 
-def format_phrase_to_sentence(phrase):
-    """Format a given phrase to a sentence
-    >>> format_phrase_to_sentence('hello')
-    >>> format_phrase_to_sentence('It is an ex parrot.')
-    >>> format_phrase_to_sentence('sUpeRcolurs ar sUperb')
-    """
-    pass
 
 # tests
-format_phrase_to_sentence('hello')
-format_phrase_to_sentence('it is an ex parrot')  # should add full stop and capitalize
-format_phrase_to_sentence('lOl, i Ate a Baloney')
+# format_phrase_to_sentence(phrase='hello')
+# format_phrase_to_sentence('it is an ex parrot')  # should add full stop and capitalize
+# format_phrase_to_sentence('lOl, i Ate a Baloney')
