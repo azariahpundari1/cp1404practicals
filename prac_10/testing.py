@@ -47,16 +47,15 @@ def run_tests():
     test_car = Car(fuel=10)
 
     assert test_car.fuel == 10, "Car did not set fuel correctly"
-    assert test_car.fuel != 0,  "Car did not set fuel correctly"
+    assert test_car.fuel != 0, "Car did not set fuel correctly"
 
 
 run_tests()
 
-# TODO: 3. Uncomment the following line and run the doctests
 # (PyCharm may see your >>> doctest comments and run doctests anyway.)
 doctest.testmod()
 
-# TODO: 4. Fix the failing is_long_word function
+
 # (don't change the tests, change the function!)
 
 # TODO: 5. Write and test a function to format a phrase as a sentence,
@@ -68,3 +67,10 @@ doctest.testmod()
 # and one more you decide (one that is valid!)
 # test this and watch the tests fail
 # then write the body of the function so that the tests pass
+
+def format_phrase_to_sentence():
+    """Format a given phrase to a sentence"""
+    pass
+
+
+format_phrase_to_sentence()
